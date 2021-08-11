@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package utils
 
@@ -13,6 +13,7 @@ import (
 	"github.com/onosproject/onos-test/pkg/onostest"
 	"github.com/stretchr/testify/assert"
 )
+
 func getCredentials() (string, string, error) {
 	kubClient, err := kubernetes.New()
 	if err != nil {

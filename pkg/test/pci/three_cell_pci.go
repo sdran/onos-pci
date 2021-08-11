@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package pci
 
@@ -48,13 +48,13 @@ func (s *TestSuite) TestThreeCellPci(t *testing.T) {
 				break
 			}
 			select {
-			case indMsg := <- indCh:
+			case indMsg := <-indCh:
 				e2IndCh <- &store.E2NodeIndication{
 					NodeID: nodeIDs[0],
 					IndMsg: indMsg,
 				}
 				numIndMsg++
-			case <- time.After(60 * time.Second):
+			case <-time.After(60 * time.Second):
 				t.Error("Indication message did not arrive before timer was expired")
 			}
 		}
@@ -70,10 +70,10 @@ func (s *TestSuite) TestThreeCellPci(t *testing.T) {
 			break
 		}
 		select {
-		case ctrlMsg := <- ctrlReqChMap[nodeIDs[0]]:
+		case ctrlMsg := <-ctrlReqChMap[nodeIDs[0]]:
 			t.Logf("Received control message: %v", ctrlMsg)
 			numCtrlMsg++
-		case <- time.After(60 * time.Second):
+		case <-time.After(60 * time.Second):
 			t.Fatal("Control message did not arrive before timer was expired")
 		}
 	}

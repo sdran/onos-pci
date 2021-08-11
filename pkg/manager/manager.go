@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package manager
 
@@ -9,13 +9,13 @@ import (
 	"github.com/onosproject/onos-lib-go/pkg/logging"
 	"github.com/onosproject/onos-lib-go/pkg/northbound"
 	"github.com/onosproject/onos-pci/pkg/controller"
+	nbi "github.com/onosproject/onos-pci/pkg/northbound"
 	"github.com/onosproject/onos-pci/pkg/southbound/admin"
 	"github.com/onosproject/onos-pci/pkg/southbound/ricapie2"
 	"github.com/onosproject/onos-pci/pkg/store"
 	app "github.com/onosproject/onos-ric-sdk-go/pkg/config/app/default"
 	configurable "github.com/onosproject/onos-ric-sdk-go/pkg/config/registry"
 	configutils "github.com/onosproject/onos-ric-sdk-go/pkg/config/utils"
-	nbi "github.com/onosproject/onos-pci/pkg/northbound"
 	"sync"
 )
 

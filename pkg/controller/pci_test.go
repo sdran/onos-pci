@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package controller
 
@@ -16,7 +16,7 @@ func TestNewPciController(t *testing.T) {
 	sampleIndChan := make(chan *store.E2NodeIndication)
 	sampleCtrlReqChans := make(map[string]chan *e2tapi.ControlRequest)
 	samplePciController := PciCtrl{
-		IndChan: sampleIndChan,
+		IndChan:      sampleIndChan,
 		CtrlReqChans: sampleCtrlReqChans,
 		PciMetricMap: make(map[string]*store.CellPciNrt),
 		GlobalPciMap: make(map[string]int32),

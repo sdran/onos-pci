@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package admin
 
@@ -88,7 +88,6 @@ func (s *E2AdminSession) GetRANFunctions(nodeID string) ([]*adminapi.RANFunction
 	}
 	return ranFunctions, nil
 }
-
 
 func (s *E2AdminSession) connectionHandler() (adminapi.E2TAdminServiceClient, error) {
 	log.Infof("Connecting to ONOS-E2T ... %s", s.E2TEndpoint)

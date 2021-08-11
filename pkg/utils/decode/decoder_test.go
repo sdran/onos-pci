@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package decode
 
@@ -10,7 +10,6 @@ import (
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
-
 
 func TestPlmnIdToUint32(t *testing.T) {
 	samplePlmnIDBytes := []byte{38, 132, 19}
@@ -22,8 +21,8 @@ func TestPlmnIdToUint32(t *testing.T) {
 
 func TestCgiToString(t *testing.T) {
 	sampleCGI := &store.CGI{
-		PlmnID: uint32(1279014),
-		Ecid: uint64(82530),
+		PlmnID:  uint32(1279014),
+		Ecid:    uint64(82530),
 		EcidLen: uint32(28),
 	}
 

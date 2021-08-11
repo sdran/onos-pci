@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package controller
 
@@ -23,21 +23,21 @@ func TestNewPciArbitratorController(t *testing.T) {
 	assert.Equal(t, *samplePciArbitratorController, *newPciArbitratorController)
 }
 
-func GenSamplePciArbitratorController() (*store.CGI, *store.CellPciNrt ,*PciArbitratorCtrl, map[string]int32, map[string]*store.CellPciNrt) {
+func GenSamplePciArbitratorController() (*store.CGI, *store.CellPciNrt, *PciArbitratorCtrl, map[string]int32, map[string]*store.CellPciNrt) {
 	sampleTargetE2NodeCgi := store.NewCGI(uint32(1279014), uint64(82530), uint32(28))
 	sampleNeighborCell1 := store.NeighborCell{
-		Metric: store.NewCellMetric(int32(1), e2smrcpreies.CellSize_CELL_SIZE_FEMTO, int32(1)),
-		Cgi: store.NewCGI(uint32(1279015), uint64(82530), uint32(28)),
+		Metric:  store.NewCellMetric(int32(1), e2smrcpreies.CellSize_CELL_SIZE_FEMTO, int32(1)),
+		Cgi:     store.NewCGI(uint32(1279015), uint64(82530), uint32(28)),
 		NrIndex: 0,
 	}
 	sampleNeighborCell2 := store.NeighborCell{
-		Metric: store.NewCellMetric(int32(1), e2smrcpreies.CellSize_CELL_SIZE_FEMTO, int32(2)),
-		Cgi: store.NewCGI(uint32(1279016), uint64(82530), uint32(28)),
+		Metric:  store.NewCellMetric(int32(1), e2smrcpreies.CellSize_CELL_SIZE_FEMTO, int32(2)),
+		Cgi:     store.NewCGI(uint32(1279016), uint64(82530), uint32(28)),
 		NrIndex: 1,
 	}
 	sampleNeighborCell3 := store.NeighborCell{
-		Metric: store.NewCellMetric(int32(1), e2smrcpreies.CellSize_CELL_SIZE_FEMTO, int32(3)),
-		Cgi: store.NewCGI(uint32(1279017), uint64(82530), uint32(28)),
+		Metric:  store.NewCellMetric(int32(1), e2smrcpreies.CellSize_CELL_SIZE_FEMTO, int32(3)),
+		Cgi:     store.NewCGI(uint32(1279017), uint64(82530), uint32(28)),
 		NrIndex: 2,
 	}
 	samplePciPool1 := store.PciPool{
@@ -69,7 +69,7 @@ func GenSamplePciArbitratorController() (*store.CGI, *store.CellPciNrt ,*PciArbi
 	fmt.Printf("sampleMetric: %v\n", sampleMetric)
 
 	return sampleTargetE2NodeCgi, sampleTargetE2NodeMetric, &PciArbitratorCtrl{
-		TargetE2NodeCgi: sampleTargetE2NodeCgi,
+		TargetE2NodeCgi:    sampleTargetE2NodeCgi,
 		TargetE2NodeMetric: sampleTargetE2NodeMetric,
 		D1NeighborPciMap:   make(map[string]int32),
 		D2NeighborPciMap:   make(map[string]int32),

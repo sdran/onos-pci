@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
 //
-// SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+// SPDX-License-Identifier: Apache-2.0
 
 package northbound
 
 import (
 	"context"
 	"fmt"
-	service "github.com/onosproject/onos-lib-go/pkg/northbound"
 	pciapi "github.com/onosproject/onos-api/go/onos/pci"
+	service "github.com/onosproject/onos-lib-go/pkg/northbound"
 	"github.com/onosproject/onos-pci/pkg/controller"
 	"github.com/onosproject/onos-pci/pkg/utils/decode"
 	"google.golang.org/grpc"
@@ -52,8 +52,8 @@ func (s Server) GetNumConflicts(ctx context.Context, request *pciapi.GetRequest)
 
 	response := &pciapi.GetResponse{
 		Object: &pciapi.Object{
-			Id: id,
-			Revision: 0,
+			Id:         id,
+			Revision:   0,
 			Attributes: attr,
 		},
 	}
@@ -73,8 +73,8 @@ func (s Server) GetNumConflictsAll(ctx context.Context, request *pciapi.GetReque
 
 	response := &pciapi.GetResponse{
 		Object: &pciapi.Object{
-			Id: "all",
-			Revision: 0,
+			Id:         "all",
+			Revision:   0,
 			Attributes: attr,
 		},
 	}
@@ -94,8 +94,8 @@ func (s Server) GetNeighbors(ctx context.Context, request *pciapi.GetRequest) (*
 
 	response := &pciapi.GetResponse{
 		Object: &pciapi.Object{
-			Id: id,
-			Revision: 0,
+			Id:         id,
+			Revision:   0,
 			Attributes: attr,
 		},
 	}
@@ -117,8 +117,8 @@ func (s Server) GetNeighborsAll(ctx context.Context, request *pciapi.GetRequest)
 
 	response := &pciapi.GetResponse{
 		Object: &pciapi.Object{
-			Id: "all",
-			Revision: 0,
+			Id:         "all",
+			Revision:   0,
 			Attributes: attr,
 		},
 	}
@@ -138,8 +138,8 @@ func (s Server) GetMetric(ctx context.Context, request *pciapi.GetRequest) (*pci
 
 	response := &pciapi.GetResponse{
 		Object: &pciapi.Object{
-			Id: id,
-			Revision: 0,
+			Id:         id,
+			Revision:   0,
 			Attributes: attr,
 		},
 	}
@@ -161,8 +161,8 @@ func (s Server) GetMetricAll(ctx context.Context, request *pciapi.GetRequest) (*
 
 	response := &pciapi.GetResponse{
 		Object: &pciapi.Object{
-			Id: "all",
-			Revision: 0,
+			Id:         "all",
+			Revision:   0,
 			Attributes: attr,
 		},
 	}
@@ -181,8 +181,8 @@ func (s Server) GetPci(ctx context.Context, request *pciapi.GetRequest) (*pciapi
 	attr[id] = fmt.Sprintf("%d", pci)
 	response := &pciapi.GetResponse{
 		Object: &pciapi.Object{
-			Id: id,
-			Revision: 0,
+			Id:         id,
+			Revision:   0,
 			Attributes: attr,
 		},
 	}
@@ -202,8 +202,8 @@ func (s Server) GetPciAll(ctx context.Context, request *pciapi.GetRequest) (*pci
 
 	response := &pciapi.GetResponse{
 		Object: &pciapi.Object{
-			Id: "all",
-			Revision: 0,
+			Id:         "all",
+			Revision:   0,
 			Attributes: attr,
 		},
 	}
